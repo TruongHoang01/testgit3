@@ -1,0 +1,23 @@
+{
+  "name": "file_test",
+  "version": "1.0.0",
+  "description": "��~\u0000#\u0000 \u0000T\u0000e\u0000s\u0000t\u0000-\u0000g\u0000i\u0000t\u0000\r\u0000 \u0000",
+  "main": "test.js",
+  "scripts": {
+    "start":  "json-server --watch db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TruongHoang01/Test-git.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TruongHoang01/Test-git/issues"
+  },
+  "homepage": "https://github.com/TruongHoang01/Test-git#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}

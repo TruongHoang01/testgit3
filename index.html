@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/test.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body id="body">
+    <!-- <div> 
+        <h2>Danh sách sinh viên</h2>
+        <ul id="list_student"></ul>
+    </div> -->
+    <div class="validator form-login-main appear">
+        <form class="form form-login">
+            <h2>Đăng nhập</h2>
+            <div>
+                <div>
+                    <label>ID: </label>
+                    <input class="input-validator" type="text" id="id-login" name="id">
+                </div>
+                <div>
+                    <label>Tên SV: </label>
+                    <input class="input-validator" type="text" id="name-login" name="name">
+                </div>
+                <div>
+                    <label>Tuổi SV: </label>
+                    <input class="input-validator" type="text" id ="age-login" name="age">
+                </div>
+                <div>
+                    <button class="login-btn" type="submit">Đăng nhập</button> 
+                </div>              
+            </div>
+        </form>
+        <button class="change-page-btn">Chuyển qua trang đăng ký</button>
+    </div>
+    
+    <form class="exit-btn-place"></form>
+    
+    <div class="validator form-register-main hidden">
+        <form class="form form-register">
+            <h2>Đăng ký</h2>
+            <div>
+                <div>
+                    <label>ID: </label>
+                    <input class="input-validator" type="text" id="id-register" name="id">
+                </div>
+                <div>
+                    <label>Tên SV: </label>
+                    <input class="input-validator" type="text" id="name-register" name="name">
+                </div>
+                <div>
+                    <label>Tuổi SV: </label>
+                    <input class="input-validator" type="text" id ="age-register" name="age">
+                </div>
+                <div>
+                    <button class="register-btn" type="submit">Đăng ký</button> 
+                </div>   
+            </div>
+        </form>
+        <button class="change-page-btn">Chuyển qua trang đăng nhập</button>
+    </div>
+    
+    <div id="container-main-page" class="appear"></div>
+    <script src="/test.js"></script>
+</body>
+</html>
