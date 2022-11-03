@@ -104,8 +104,33 @@ function Validator(formSelector) {
   };
 }
 
+
+//kiểm tra id trùng
+function checkID(form){
+  var formElement = document.querySelector(form);
+  var formInputElement = {};
+  var inputElements = formElement.querySelector(".input-validator");
+  var btn = document.querySelector(".register-btn");
+  btn.onclick = () =>{
+    for(var input of inputElements){
+      formInputElement[input.name] = input.value;
+    }
+    fetch(API)
+      .then(res => res.json())
+      .then(database => {
+        const equal = database.find(data =>{
+          if(data.id == formInputElement.id) return true;
+          return false;
+        })
+        if(equal)
+        return true;
+        return false;
+      })    
+  }  
+}
+
 //đăng ký
-function POST(data,cb){
+function POST(data){
   var response  = {
     method: 'POST', 
     mode: 'cors', 
@@ -120,22 +145,31 @@ function POST(data,cb){
     };
   fetch(API,response)
     .then((res) => res.json())
-    .then(cb)
+    .then(()=>{
+      alert("Đăng ký thành công");
+    })
+    .catch(()=>{
+      alert("Đăng ký thất bại\nSố ID đã có người đăng ký");
+    })
 }
 
 function addDataRegister(){
   var regisForm = document.querySelector(".form-register");
   regisForm.onsubmit = (e) => {
     e.preventDefault();
+    var a= 0;
     var id = document.querySelector("#id-register").value;
     var name = document.querySelector("#name-register").value;
     var age = document.querySelector("#age-register").value;
-    var regisData ={
-      id:id,
-      name: name,
-      age: age
-    }
-    POST(regisData);
+   if(name =="" || id=="" || age == "") alert("Thieu thong tin de dang ky");
+      else {
+        var regisData ={
+          id:id,
+          name: name,
+          age: age
+        }
+        POST(regisData);
+        }    
   }
 }
 
@@ -147,14 +181,13 @@ function start() {
   addDataRegister();
 }
 start();
+
 // var formElement = document.querySelector(".form");
 // var formInputElement = {};
 // var inputElements = formElement.querySelectorAll("[name]");
 // for (var input of inputElements) {
 //   console.log(input.name);
 // }
-
-
 
 
       

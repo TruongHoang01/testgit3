@@ -4,3 +4,22 @@
 .appear{
     display: block
 }
+.validator h2{
+    color: red;
+    margin:10px 0;   
+}
+.validator{
+    margin-left: 100px;
+}
+.validator-contain{
+    margin:10px 0;   
+}
+.validator-contain input{
+    padding-right: 14px;
+}
+.validator-contain-id label{
+    padding-right: 36px;
+}
+.validator-contain-name label{
+    padding-right: 4px;
+} 
